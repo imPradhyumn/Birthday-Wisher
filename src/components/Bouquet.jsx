@@ -1,20 +1,49 @@
-import React, { useEffect } from "react";
+import React from "react";
+import Cracker2 from "../images/cracker2.gif";
+import HBD1 from "../images/hbd1.png";
+import HBD2 from "../images/hbd2.jpg";
+import Ballons from "../images/ballons.jpg";
 import "../css/bouquet.scss";
 
 function Bouquet() {
-  useEffect(() => {
-    const onload = () => {
-      console.log("hjkh");
-      const c = setTimeout(() => {
-        document.body.classList.remove("not-loaded");
-        clearTimeout(c);
-      }, 1000);
-    };
-    onload();
-  }, []);
   return (
     <div>
-      <div className="night"></div>
+      {/* <div className="night"></div> */}
+
+      <img
+        src={HBD1}
+        alt="hbd-logo"
+        style={{
+          position: "absolute",
+          top: "10%",
+          left: "35%",
+          width: "400px",
+          height: "250px",
+        }}
+      />
+
+      <img
+        src={Cracker2}
+        alt="cracker"
+        style={{
+          position: "absolute",
+          top: "100px",
+          left: "10%",
+          width: "200px",
+          height: "200px",
+        }}
+      />
+      <img
+        src={Cracker2}
+        alt="cracker"
+        style={{
+          position: "absolute",
+          top: "50%",
+          right: "10%",
+          width: "200px",
+          height: "200px",
+        }}
+      />
       <div className="flowers">
         <div className="flower flower--1">
           <div className="flower__leafs flower__leafs--1">

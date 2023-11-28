@@ -1,3 +1,9 @@
+@media (width>=800px) {
+  .flowers {
+    transform: scale(0.5) !important;
+  }
+}
+
 .night {
   position: fixed;
   left: 50%;
