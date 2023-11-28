@@ -1,49 +1,90 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Cracker2 from "../images/cracker2.gif";
 import HBD1 from "../images/hbd1.png";
 import HBD2 from "../images/hbd2.jpg";
-import Ballons from "../images/ballons.jpg";
+import Video from "../images/hbd-video.mp4";
+import Ballons from "../images/ballons.png";
+import Cake from "../images/cake1.png";
 import "../css/bouquet.scss";
 
 function Bouquet() {
+  const [isVideoShown, setIsVideoShown] = useState(false);
+
+  const playVideo = () => {
+    setIsVideoShown(true);
+    document.getElementById("player").play();
+  };
+
   return (
     <div>
-      {/* <div className="night"></div> */}
+      <div id="hbd-container">
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img
+            src={HBD1}
+            alt="hbd-logo"
+            id="hbd-logo"
+          />
+          <img
+            src={Cake}
+            alt="cake"
+            style={{ width: "20%" }}
+          />
+        </div>
+        {!isVideoShown && (
+          <button
+            style={{
+              padding: "5px 10px",
+              borderRadius: "20px",
+              outline: "none",
+              border: "none",
+              cursor: "pointer",
+            }}
+            onClick={playVideo}
+          >
+            Jaldi yaha click karo
+          </button>
+        )}
 
-      <img
-        src={HBD1}
-        alt="hbd-logo"
-        style={{
-          position: "absolute",
-          top: "10%",
-          left: "35%",
-          width: "400px",
-          height: "250px",
-        }}
-      />
+        <video
+          width="250"
+          height="150"
+          id="player"
+          style={{ display: !isVideoShown ? "none" : "block" }}
+        >
+          <source
+            src={Video}
+            type="video/mp4"
+          />
+          Your browser does not support this video format.
+        </video>
+      </div>
 
       <img
         src={Cracker2}
+        id="crackers"
         alt="cracker"
         style={{
           position: "absolute",
-          top: "100px",
-          left: "10%",
-          width: "200px",
-          height: "200px",
+          top: "30%",
+          left: "5%",
+          width: "30%",
+          height: "auto",
+          zIndex: "-99",
         }}
       />
       <img
-        src={Cracker2}
+        src={Ballons}
+        id="ballons"
         alt="cracker"
         style={{
           position: "absolute",
           top: "50%",
           right: "10%",
-          width: "200px",
-          height: "200px",
+          width: "30%",
+          height: "auto",
         }}
       />
+
       <div className="flowers">
         <div className="flower flower--1">
           <div className="flower__leafs flower__leafs--1">

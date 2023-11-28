@@ -1,6 +1,39 @@
 @media (width>=800px) {
   .flowers {
-    transform: scale(0.5) !important;
+    transform: scale(0.3) !important;
+  }
+
+  #hbd-logo {
+    width: 400px !important;
+  }
+}
+
+#hbd-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#hbd-logo {
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
+}
+
+#ballons {
+  animation: animate-ballons 4s ease;
+}
+
+@keyframes animate-ballons {
+  0% {
+    transform: translateY(200px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
@@ -47,8 +80,10 @@
 }
 
 .flowers {
-  position: relative;
-  transform: scale(0.9);
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: scale(0.5);
 }
 
 .flower {
