@@ -30,6 +30,23 @@ function Bouquet() {
             style={{ width: "20%" }}
           />
         </div>
+        <h1
+          style={{
+            color: "white",
+            marginTop: "-20px",
+            fontFamily: "monospace",
+          }}
+        >
+          Anjali
+        </h1>
+        <p
+          style={{
+            color: "white",
+            marginTop: "20px",
+          }}
+        >
+          {'"Tumhari har wish poori ho, matlab har"'}
+        </p>
         {!isVideoShown && (
           <button
             style={{
@@ -38,6 +55,7 @@ function Bouquet() {
               outline: "none",
               border: "none",
               cursor: "pointer",
+              marginTop: "50px",
             }}
             onClick={playVideo}
           >
@@ -50,6 +68,7 @@ function Bouquet() {
           height="150"
           id="player"
           style={{ display: !isVideoShown ? "none" : "block" }}
+          controls
         >
           <source
             src={Video}
@@ -65,7 +84,7 @@ function Bouquet() {
         alt="cracker"
         style={{
           position: "absolute",
-          top: "30%",
+          top: "50%",
           left: "5%",
           width: "30%",
           height: "auto",
