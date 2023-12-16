@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Cracker2 from "../images/cracker2.gif";
 import HBD1 from "../images/hbd1.png";
-import HBD2 from "../images/hbd2.jpg";
 import Video from "../images/hbd-video.mp4";
 import Ballons from "../images/ballons.png";
 import Cake from "../images/cake1.png";
@@ -15,8 +14,28 @@ function Bouquet() {
     document.getElementById("player").play();
   };
 
+  const playSong = async () => {
+    try {
+      const player = document.getElementById("audio-player");
+      await player.play();
+      player.volume = 0.3;
+    } catch (err) {
+      console.log("Error");
+    }
+  };
+
+  useEffect(() => {
+    setTimeout(playSong, 2000);
+  }, []);
+
+  const songSrc = "/audio.mp3";
+
   return (
     <div>
+      <audio
+        id="audio-player"
+        src={songSrc}
+      ></audio>
       <div id="hbd-container">
         <div style={{ display: "flex", alignItems: "center" }}>
           <img
