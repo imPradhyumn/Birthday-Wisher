@@ -56,7 +56,7 @@ function Bouquet() {
             fontFamily: "monospace",
           }}
         >
-          Manasvi
+          Anjali
         </h1>
         <p
           style={{
@@ -64,7 +64,7 @@ function Bouquet() {
             marginTop: "20px",
           }}
         >
-          {'"Tumhari har wish poori ho, matlab har"'}
+          {'"May God brings heaven to you :)"'}
         </p>
         {!isVideoShown && (
           <button
